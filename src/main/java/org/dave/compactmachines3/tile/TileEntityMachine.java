@@ -159,6 +159,11 @@ public class TileEntityMachine extends TileEntity implements ICapabilityProvider
             return true;
         }
 
+        //Allows OPs to enter the machine if it is whitelisted.
+        if ( FMLCommonHandler.instance().getMinecraftServerInstance().getPlayerList().getOppedPlayers().getEntry( player.getGameProfile() ) != null ) {
+            return true;
+        }
+
         return false;
     }
 
