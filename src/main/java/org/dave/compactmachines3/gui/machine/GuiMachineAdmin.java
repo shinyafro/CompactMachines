@@ -28,6 +28,7 @@ public class GuiMachineAdmin extends GuiMachine {
 
     @Override
     public void initGui() {
+        super.IsAdmin = true;
         super.initGui();
 
         buttonPrevious = new GuiButton(buttonIdOffset + Buttons.PREVIOUS.ordinal(), 4, height - 23, 80, 20, "Previous");

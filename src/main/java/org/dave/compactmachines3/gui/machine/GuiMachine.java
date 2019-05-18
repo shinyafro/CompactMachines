@@ -42,6 +42,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class GuiMachine extends GuiContainer {
+    protected boolean IsAdmin = false;
+
     protected ResourceLocation tabIcons;
 
     private int windowWidth = 200;
@@ -180,7 +182,7 @@ public class GuiMachine extends GuiContainer {
             return;
         }
 
-        if(!GuiMachineData.isAllowedToEnter(mc.player)) {
+        if(!GuiMachineData.isAllowedToEnter(mc.player, IsAdmin)) {
             return;
         }
 
@@ -379,7 +381,7 @@ public class GuiMachine extends GuiContainer {
             boolean mousePressed = this.guiEnterButton.mousePressed(this.mc, mouseX, mouseY);
             boolean hasDevice = ShrinkingDeviceUtils.hasShrinkingDeviceInInventory(mc.player);
             boolean validCoords = GuiMachineData.coords != -1;
-            boolean isAllowedToEnter = GuiMachineData.isAllowedToEnter(mc.player);
+            boolean isAllowedToEnter = GuiMachineData.isAllowedToEnter(mc.player, IsAdmin);
 
             if(mousePressed && hasDevice && validCoords && isAllowedToEnter) {
                 this.guiEnterButton.playPressSound(this.mc.getSoundHandler());

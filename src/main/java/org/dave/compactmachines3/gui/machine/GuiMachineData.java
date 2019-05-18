@@ -19,7 +19,7 @@ public class GuiMachineData {
     public static boolean requiresNewDisplayList = false;
     public static boolean canRender = false;
 
-    public static boolean isAllowedToEnter(EntityPlayer player) {
+    public static boolean isAllowedToEnter(EntityPlayer player, boolean IsAdmin) {
         if(!locked) {
             return true;
         }
@@ -36,7 +36,7 @@ public class GuiMachineData {
             return true;
         }
 
-        return false;
+        return IsAdmin;
     }
 
     public static void updateGuiMachineData(int machineSize, int coords, DimensionBlockPos machinePos, String owner, String customName, Set<String> playerWhiteList, boolean locked) {
