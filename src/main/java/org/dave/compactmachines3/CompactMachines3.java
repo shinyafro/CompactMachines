@@ -29,7 +29,7 @@ import org.dave.compactmachines3.world.WorldSavedDataMachines;
 import org.dave.compactmachines3.world.data.provider.ExtraTileDataProviderRegistry;
 import org.dave.compactmachines3.world.tools.DimensionTools;
 
-@Mod(modid = CompactMachines3.MODID, version = CompactMachines3.VERSION, acceptedMinecraftVersions = "[1.12,1.13)", dependencies = "after:refinedstorage;after:yunomakegoodmap", guiFactory = CompactMachines3.GUI_FACTORY)
+@Mod(modid = CompactMachines3.MODID, version = CompactMachines3.VERSION, acceptedMinecraftVersions = "[1.12,1.13)", dependencies = "after:refinedstorage;after:yunomakegoodmap", guiFactory = CompactMachines3.GUI_FACTORY, acceptableRemoteVersions = "*")
 public class CompactMachines3
 {
     public static final String MODID = "compactmachines3";
